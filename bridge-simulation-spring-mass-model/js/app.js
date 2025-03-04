@@ -14,16 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.height = window.outerHeight;
   }
 
-  function sign(number) {
-    return Math.sign(number);
+  function initializeMatrix(m, n) {
+    return Array.from({ length: m }, () => Array(n).fill(0));
   }
 
   function multiplyMatrixByScalar(matrix, number) {
     return matrix.map(row => row.map(value => value * number));
-  }
-
-  function initializeMatrix(m, n) {
-    return Array.from({ length: m }, () => Array(n).fill(0));
   }
 
   function addMatrices(matrix1, matrix2) {
@@ -106,16 +102,16 @@ document.addEventListener("DOMContentLoaded", () => {
         d = 0;
 
         if (i > 0) {
-          d = d + k * (Math.sqrt(Math.pow(dy, 2) + Math.pow(x[i][j] - x[i - 1][j], 2)) - Lo) * sign(x[i - 1][j] - x[i][j]); // top
+          d = d + k * (Math.sqrt(Math.pow(dy, 2) + Math.pow(x[i][j] - x[i - 1][j], 2)) - Lo) * Math.sign(x[i - 1][j] - x[i][j]); // top
         }
         if (i < (m - 1)) {
-          d = d + k * (Math.sqrt(Math.pow(dy, 2) + Math.pow(x[i][j] - x[i + 1][j], 2)) - Lo) * sign(x[i + 1][j] - x[i][j]); // bottom
+          d = d + k * (Math.sqrt(Math.pow(dy, 2) + Math.pow(x[i][j] - x[i + 1][j], 2)) - Lo) * Math.sign(x[i + 1][j] - x[i][j]); // bottom
         }
         if (j > 0) {
-          d = d + k * (Math.sqrt(Math.pow(dx, 2) + Math.pow(x[i][j] - x[i][j - 1], 2)) - Lo) * sign(x[i][j - 1] - x[i][j]); // left
+          d = d + k * (Math.sqrt(Math.pow(dx, 2) + Math.pow(x[i][j] - x[i][j - 1], 2)) - Lo) * Math.sign(x[i][j - 1] - x[i][j]); // left
         }
         if (j < (n - 1)) {
-          d = d + k * (Math.sqrt(Math.pow(dx, 2) + Math.pow(x[i][j] - x[i][j + 1], 2)) - Lo) * sign(x[i][j + 1] - x[i][j]); // right
+          d = d + k * (Math.sqrt(Math.pow(dx, 2) + Math.pow(x[i][j] - x[i][j + 1], 2)) - Lo) * Math.sign(x[i][j + 1] - x[i][j]); // right
         }
 
         d = d - beta * x[i][j + n];
@@ -244,42 +240,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const equation8 = "F = -k \\cdot x, \\quad F = -k \\cdot (L - L_0)";
     katex.render(equation8, document.getElementById("equation8"));
+
+    const equation9 = "\\sum F = k \\cdot (L - L_0) \\cdot \\operatorname{sign} \\left( (x_i + \\Delta x, y, z_i \\pm \\Delta z) - (x_i, y, z_i) \\right) - K_f \\cdot \\frac{d z}{dt} = m \\cdot \\frac{d^2 z}{dt^2}\n";
+    katex.render(equation9, document.getElementById("equation9"));
+
+    const equation10 = "\\sum F = k \\cdot (\\sqrt{\\Delta x^2 + \\left( z_{i \\pm 1, j \\pm 1} - z_{i, j} \\right)^2}\n - L_0) \\cdot \\operatorname{sign} \\left( (x_i + \\Delta x, y, z_i \\pm \\Delta z) - (x_i, y, z_i) \\right) - K_f \\cdot \\frac{d z}{dt} = m \\cdot \\frac{d^2 z}{dt^2}\n";
+    katex.render(equation10, document.getElementById("equation10"));
+
+
   }
-
-  /*let a = sign(25);
-  console.log(a);
-  let b = sign(0);
-  console.log(b);
-  let c = sign(-34);
-  console.log(c);
-
-  let matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-  let scalar = 3;
-  let newMatrix = multiplyMatrixByScalar(matrix, scalar);
-  console.dir(newMatrix);
-
-  let anotherMatrix = initializeMatrix(3, 12);
-  console.dir(anotherMatrix);
-
-  const matrix1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-  const matrix2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
-
-  try {
-    const result = addMatrices(matrix1, matrix2);
-    console.log(result);
-  } catch (error) {
-    console.error(error.message);
-  }
-
-  const matrixWithDecimals = [[1.2345, 10.9876, 100.5678], [0.8765, 9.5432, 95.3214], [3.1415, 27.718, 123.4567]];
-  const decimalIndex = 2; // Use adjustment value of 100
-  const result = adjustMatrix(matrixWithDecimals, decimalIndex);
-  console.log(result);*/
 
   runSimulation(
     f,
     0,
-    100,
+    1000,
     15,
     5,
     0.05,

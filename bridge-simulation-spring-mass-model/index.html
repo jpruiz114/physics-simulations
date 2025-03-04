@@ -44,13 +44,15 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
             integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
+
+    <link rel="stylesheet" href="css/monokai.css">
   </head>
 
   <body>
     <div class="no-cover"></div>
     <div class="header">
       <h1>Bridge Simulation Using a Spring-Mass Model</h1>
-      
+
       <p><strong>By Jean Paul Ruiz - March 3, 2025</strong></p>
     </div>
     <article class="notion-root max-width">
@@ -112,6 +114,32 @@
         nor compressed.</p></div>
       <div id="equation8"></div>
       <br>
+      <div id="equation9"></div>
+      <br>
+      <div id="equation10"></div>
+      <br>
+
+      <h2>How do we translate all of this into code?</h2>
+
+      <p>We need to initialize a few matrices so we create a simple function to do it:</p>
+      <script src="https://gist.github.com/jpruiz114/e8d119334453e8b3dd54bbc7e2e1002b.js"></script>
+
+      <p>We will also need the ability to multiply a matrix by a scalar:</p>
+      <script src="https://gist.github.com/jpruiz114/7b00f75672ccde237891061b196edc73.js"></script>
+
+      <p>Additionally, we will need the ability to add matrices:</p>
+      <script src="https://gist.github.com/jpruiz114/d8e9b1eb8916d70dfbed98def337bfe2.js"></script>
+
+      <p>For visualization purposes, we want to approximate the numeric values of a matrix:</p>
+      <script src="https://gist.github.com/jpruiz114/23a1fb870ebe1aedbc7d80fcd1b9a4a2.js"></script>
+
+      <p>We also need to debug the matrix (As we are currently doing):</p>
+      <script src="https://gist.github.com/jpruiz114/00fb3a2e3c1d8a185fd84ed89191477a.js"></script>
+
+      <p>Later when we have the results of each iteration, we want to have the ability to render each isometric plate:</p>
+      <script src="https://gist.github.com/jpruiz114/ff0cab77a1a798e2a9ced5d57d6e001d.js"></script>
+
+      <p>Below you can see the simulation of the bridge running on an HTML canvas, rendered with an open source isometric engine (Hit: Open the browser's developer tools to see the matrices printed):</p>
 
       <canvas id="art"></canvas>
 
@@ -121,7 +149,7 @@
         I want to express my gratitude to the creators of <a class="link" href="https://github.com/jdan/isomer" target="_blank">Isomer</a>
         and <a class="link" href="https://github.com/KaTeX/KaTeX" target="_blank">KaTeX</a> for their incredible work. Isomer makes
         visualizing elements in isometric projections easy, while KaTeX allows seamless rendering of mathematical equations
-        directly in HTML.
+        directly in HTML. Finally, the authors of the <a class="link" href="https://codersblock.com/blog/customizing-github-gists/">dark theme</a> for GitHub gists also deserve some recognition.
       </p>
 
       <p><a class="link" href="/physics-simulations/">&larr; Back</a></p>
