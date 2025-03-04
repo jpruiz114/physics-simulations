@@ -1,129 +1,49 @@
 <!doctype html>
 <html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="">
 
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X2GHHPD6P5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:alt" content="">
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
 
-    gtag('js', new Date());
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#fafafa">
+  </head>
 
-    gtag('config', 'G-X2GHHPD6P5');
-  </script>
+  <body>
+    <div class="no-cover"></div>
+    <div class="header">
+      <h1>Physics Simulations</h1>
+    </div>
+    <article class="max-width">
+      <h2>Why should you consider building your own simulations in the age of AI and advanced tools?</h2>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+      <p><strong>By Jean Paul Ruiz - March 3, 2025</strong></p>
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
+      <p>With AI and powerful software available, building a simulation from scratch may sound unnecessary, but for software engineers and, in general, for curious minds, it's more relevant than ever.</p>
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+      <ul>
+        <li class="notion-list-item">Custom software abstracts away the complexity, but coding a simulation yourself increases your knowledge of physics, numerical methods, and computational modeling.</li>
+        <li class="notion-list-item">Commercial software is limited by predefined models, while your code allows you to experiment freely with different parameters, algorithms, and optimizations.</li>
+        <li class="notion-list-item">AI excels at pattern recognition, but it needs data. A custom simulation provides a controlled environment for testing AI-driven optimizations.</li>
+        <li class="notion-list-item">Not every problem requires a heavy, expensive solution. A well optimized custom simulation can be faster and more adaptable than closed software.</li>
+        <li class="notion-list-item">Finally, building a simulation from scratch is rewarding for the joy of building it yourself, challenging yourself, and seeing if you can make it happen.</li>
+      </ul>
 
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+      <p><a class="link" href="bridge-simulation-spring-mass-model">Bridge Simulation Using a Spring-Mass Model</a></p>
+    </article>
 
-  <script src="js/vendor/isomer.min.js"></script>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
-        integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib" crossorigin="anonymous">
-
-  <!-- The loading of KaTeX is deferred to speed up page rendering -->
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
-          integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
-          crossorigin="anonymous"></script>
-
-  <!-- To automatically render math in text elements, include the auto-render extension: -->
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
-          integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
-          onload="renderMathInElement(document.body);"></script>
-</head>
-
-<body>
-
-<h1>Bridge Simulation Using a Spring-Mass Model</h1>
-
-<p>
-  This simulation models a bridge as a series of interconnected plates linked by springs, following the principles of
-  Hooke's Law. Each plate represents a section of the bridge, while the springs simulate the forces that keep the
-  structure stable under different loads and displacements.
-</p>
-
-<p>
-  The restoring force in each spring is given by Hooke's Law:
-</p>
-
-<p>
-  <span id="equation_hooke"></span>
-</p>
-
-<p>
-  where \( F \) is the force exerted by the spring, \( k \) is the spring constant, and \( x \) is the displacement from
-  the spring’s natural length.
-</p>
-
-<p>
-  The length of each spring is determined by the positions of the plates it connects:
-</p>
-
-<p>
-  <span id="equation_length"></span>
-</p>
-
-<p>
-  By simulating the forces acting on each plate, we can analyze how the bridge responds to external forces such as
-  weight, wind, and vibrations, helping to understand its structural integrity.
-</p>
-
-<p>Equations</p>
-<div id="equation1"></div>
-<br>
-<div id="equation2"></div>
-<br>
-<div id="equation3"></div>
-<br>
-<div id="equation4"></div>
-<br>
-<div><p>Hooke's law</p></div>
-<div id="equation5"></div>
-<br>
-<div id="equation6"></div>
-<br>
-<div><p>The equation in Hooke's Law can be positive when the spring is stretched, meaning the displacement "x" is
-  positive, and the restoring force acts in the opposite direction to return it to equilibrium.</p></div>
-<div id="equation7"></div>
-<br>
-<div><p><span id="stretchedLength"></span> represents the length of the spring when it is stretched. This is the
-  measurement of the spring after it has been extended from its natural resting position, indicating the force applied
-  to elongate it.</p></div>
-<div><p><span id="restingLength"></span> is the natural or resting length of the spring, which is the length it assumes
-  when no external forces are applied. This is the length of the spring at equilibrium, where it is neither stretched
-  nor compressed.</p></div>
-<div id="equation8"></div>
-<br>
-
-<canvas id="art"></canvas>
-
-<p>
-  I want to express my gratitude to the creators of <a href="https://github.com/jdan/isomer" target="_blank">Isomer</a>
-  and <a href="https://github.com/KaTeX/KaTeX" target="_blank">KaTeX</a> for their incredible work. Isomer makes
-  visualizing elements in isometric projections easy, while KaTeX allows seamless rendering of mathematical equations
-  directly in HTML.
-</p>
-
-<script src="js/app.js"></script>
-</body>
-
+    <script src="js/app.js"></script>
+  </body>
 </html>

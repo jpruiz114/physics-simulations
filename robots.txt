@@ -1,5 +1,21 @@
-# www.robotstxt.org/
+User-agent: GPTBot
+Disallow: /
 
-# Allow crawling of all content
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# Allow all other bots, including search engines
 User-agent: *
 Disallow:
