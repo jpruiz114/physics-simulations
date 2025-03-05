@@ -45,6 +45,7 @@
             integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
 
+    <!-- Styles for the GitHub gists -->
     <link rel="stylesheet" href="css/monokai.css">
   </head>
 
@@ -119,6 +120,23 @@
       <div id="equation10"></div>
       <br>
 
+      <p>The corner plates will have two neighbours, the border middle plates will have three, and the middle plates will have four. The following equation describes this behavior:</p>
+
+      <div style="text-align: center;">
+        <img src="img/matrix-neighbours.png" alt="matrix neighbours"/>
+      </div>
+
+      <br>
+
+      <div style="text-align: center;">
+        <img src="img/plate-neighbours-connected.png" alt="plate neighbours connected"/>
+      </div>
+
+      <br>
+
+      <div id="equation11"></div>
+      <br>
+
       <h2>How do we translate all of this into code?</h2>
 
       <p>We need to initialize a few matrices so we create a simple function to do it:</p>
@@ -144,6 +162,14 @@
       <canvas id="art"></canvas>
 
       <p>Check the source code of this simulation <a class="link" href="https://github.com/jpruiz114/physics-simulations/tree/main/bridge-simulation-spring-mass-model">here</a></p>
+
+      <p>The old-fashioned paper will always beat anything, so I encourage you to attempt figuring out the balance equations like this:</p>
+
+      <ul>
+        <li class="notion-list-item"><a class="link" href="img/page-1.jpg">Page 1</a></li>
+        <li class="notion-list-item"><a class="link" href="img/page-2.jpg">Page 2</a></li>
+        <li class="notion-list-item"><a class="link" href="img/page-3.jpg">Page 3</a></li>
+      </ul>
 
       <p>
         I want to express my gratitude to the creators of <a class="link" href="https://github.com/jdan/isomer" target="_blank">Isomer</a>

@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const adjustedMatrix = adjustMatrix(x, 2);
         printMatrix(adjustedMatrix, 'adjustedMatrix');
 
-        drawPlates(m, n, adjustedMatrix);
+        drawPlates(m, n, x);
 
         t += h; // Increment t by h
 
@@ -247,7 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const equation10 = "\\sum F = k \\cdot (\\sqrt{\\Delta x^2 + \\left( z_{i \\pm 1, j \\pm 1} - z_{i, j} \\right)^2}\n - L_0) \\cdot \\operatorname{sign} \\left( (x_i + \\Delta x, y, z_i \\pm \\Delta z) - (x_i, y, z_i) \\right) - K_f \\cdot \\frac{d z}{dt} = m \\cdot \\frac{d^2 z}{dt^2}\n";
     katex.render(equation10, document.getElementById("equation10"));
 
-
+    const equation11 = "\\sum F = \\newline k \\cdot (\\sqrt{\\Delta x^2 + \\left( z_{i - 1, j} - z_{i, j} \\right)^2}\n - L_0) \\cdot \\operatorname{sign} \\left( z_{i - 1, j} - z_{i, j} \\right) + \\newline k \\cdot (\\sqrt{\\Delta x^2 + \\left( z_{i + 1, j} - z_{i, j} \\right)^2}\n - L_0) \\cdot \\operatorname{sign} \\left( z_{i + 1, j} - z_{i, j} \\right) + \\newline k \\cdot (\\sqrt{\\Delta x^2 + \\left( z_{i, j - 1} - z_{i, j} \\right)^2}\n - L_0) \\cdot \\operatorname{sign} \\left( z_{i, j - 1} - z_{i, j} \\right) + \\newline k \\cdot (\\sqrt{\\Delta x^2 + \\left( z_{i, j + 1} - z_{i, j} \\right)^2}\n - L_0) \\cdot \\operatorname{sign} \\left( z_{i, j + 1} - z_{i, j} \\right) \\newline - K_f \\cdot \\frac{d z}{dt} = m \\cdot \\frac{d^2 z}{dt^2}\n";
+    katex.render(equation11, document.getElementById("equation11"));
   }
 
   runSimulation(
