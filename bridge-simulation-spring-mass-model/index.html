@@ -65,7 +65,9 @@
 
       <p>Here is a simplification of the model describing the behavior of two connected plates:</p>
 
-      <img src="img/basic-model.jpg" alt="basic model" />
+      <p style="text-align: center">
+        <img src="img/basic-model-negative.jpg" alt="basic model" />
+      </p>
 
       <p>
         The restoring force in each spring is given by Hooke's Law:
@@ -92,6 +94,14 @@
         By simulating the forces acting on each plate, we can analyze how the bridge responds to external forces such as
         weight, wind, and vibrations, helping to understand its structural integrity.
       </p>
+
+      <p>Here is a slightly more detailed diagram of the forced involved between two interconnected plates:</p>
+
+      <p style="text-align: center">
+        <img src="img/model-detailed-negative.jpg" alt="model detailed" />
+      </p>
+
+      <p>Notice how we illustrate the same plate above, at the same level, and below the plate to its left.</p>
 
       <p>Equations</p>
       <div id="equation1"></div>
@@ -138,7 +148,9 @@
 
       <br>
 
-      <div id="equation11"></div>
+      <p>In the most complex scenario, a plate will have four neighbours, resulting in the following equation:</p>
+
+      <div id="equation11" style="text-align: center; line-height: 3;"></div>
       <br>
 
       <h2>How do we translate all of this into code?</h2>
