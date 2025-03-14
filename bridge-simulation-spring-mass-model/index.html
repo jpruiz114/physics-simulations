@@ -67,74 +67,84 @@
 
       <p style="text-align: center">
         <img src="img/basic-model-negative.jpg" alt="basic model" />
+        <br>
+        <small>Diagram 1</small>
       </p>
 
-      <p>
-        The restoring force in each spring is given by Hooke's Law:
-      </p>
+      <p>Notice how we illustrate the same plate above, at the same level, and below the plate to its left.</p>
+
+      <p>The restoring force in each spring is given by Hooke's Law:</p>
 
       <p>
         <span id="equation_hooke"></span>
       </p>
 
-      <p>
-        Where \( F \) is the force exerted by the spring, \( k \) is the spring constant, and \( x \) is the displacement from
-        the spring’s natural length.
-      </p>
+      <p>Where \(F\) is the force exerted by the spring, \(k\) is the spring constant, and \(x\) is the displacement from the spring’s natural length.</p>
 
-      <p>
-        The length of each spring is determined by the positions of the plates it connects:
-      </p>
+      <p>The length of each spring is determined by the positions of the plates it connects.</p>
 
-      <p>
-        <span id="equation_length"></span>
-      </p>
+      <p>Also, according to Hooke's law, displacement (\(x\)) is usually defined as follows:</p>
 
-      <p>
-        By simulating the forces acting on each plate, we can analyze how the bridge responds to external forces such as
-        weight, wind, and vibrations, helping to understand its structural integrity.
-      </p>
+      <p><span id="equation_length"></span></p>
 
-      <p>Here is a slightly more detailed diagram of the forced involved between two interconnected plates:</p>
+      <p><span id="stretchedLength"></span> represents the length of the spring when it is stretched. This is the measurement of the spring after it has been extended from its natural resting position, indicating the force applied to elongate it.</p>
+
+      <p><span id="restingLength"></span> is the natural or resting length of the spring, which is the length it assumes when no external forces are applied. This is the length of the spring at equilibrium, where it is neither stretched nor compressed.</p>
+
+      <p>By simulating the forces acting on each plate, we can analyze how the bridge responds to external forces such as weight, wind, and vibrations, helping to understand its structural integrity.</p>
+
+      <p>Here is a slightly more detailed diagram of the forces involved between two interconnected plates:</p>
 
       <p style="text-align: center">
         <img src="img/model-detailed-negative.jpg" alt="model detailed" />
+        <br>
+        <small>Diagram 2</small>
       </p>
 
-      <p>Notice how we illustrate the same plate above, at the same level, and below the plate to its left.</p>
+      <p>From the diagram above, using the Pythagoras theorem, we can find out some equations:</p>
 
-      <p>Equations</p>
       <div id="equation1"></div>
       <br>
+
       <div id="equation2"></div>
       <br>
+
       <div id="equation3"></div>
       <br>
+
       <div id="equation4"></div>
       <br>
-      <div><p>Hooke's law</p></div>
+
+      <p>From Hooke's law:</p>
+
       <div id="equation5"></div>
       <br>
+
+      <p>From Newton's second law of motion:</p>
+
       <div id="equation6"></div>
       <br>
-      <div><p>The equation in Hooke's Law can be positive when the spring is stretched, meaning the displacement "x" is
-        positive, and the restoring force acts in the opposite direction to return it to equilibrium.</p></div>
+
+      <p>In Hooke's Law, when the spring is stretched, the displacement \(x\) is positive, and the restoring force \(F\) is negative, acting in the opposite direction to return the spring to equilibrium.</p>
+
       <div id="equation7"></div>
       <br>
-      <div><p><span id="stretchedLength"></span> represents the length of the spring when it is stretched. This is the
-        measurement of the spring after it has been extended from its natural resting position, indicating the force applied
-        to elongate it.</p></div>
-      <div><p><span id="restingLength"></span> is the natural or resting length of the spring, which is the length it assumes
-        when no external forces are applied. This is the length of the spring at equilibrium, where it is neither stretched
-        nor compressed.</p></div>
+
+      <p>Additionally, we express Hooke's Law in terms of the absolute lengths of the spring instead of displacement:</p>
+
       <div id="equation8"></div>
       <br>
+
+      <p>Notice how in Diagram 2, the plate moving up (or down) has a vector of speed, defined as \(\frac{dz}{dt}\), and there is also an opposing force defined by the air friction (\(K_f\)) multiplied by the speed (\(\frac{dz}{dt}\)).</p>
+      <br>
+
       <div id="equation9"></div>
       <br>
+
       <div id="equation10"></div>
       <br>
 
-      <p>The corner plates will have two neighbours, the border middle plates will have three, and the middle plates will have four. The following equation describes this behavior:</p>
+      <p>The corner plates will have two neighbours, the border middle plates will have three, and the middle plates will have four. The following diagrams describe this behavior:</p>
 
       <div style="text-align: center;">
         <img src="img/matrix-neighbours.png" alt="matrix neighbours"/>

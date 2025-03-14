@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderEquations() {
     const equationHooke = "F = -k \\cdot x";
-    const equationLength = "L = L_0 + x";
+    const equationLength = "x = L - L_0";
 
     katex.render(equationHooke, document.getElementById("equation_hooke"));
     katex.render(equationLength, document.getElementById("equation_length"));
@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const equation6 = "F = m \\cdot a\n" + ", \\quad a = \\frac{d^2x}{dt^2}\n" + ", \\quad F = m \\cdot \\frac{d^2x}{dt^2}\n";
     katex.render(equation6, document.getElementById("equation6"));
 
-    const equation7 = "m \\cdot \\frac{d^2x}{dt^2} = - k \\cdot x\n";
+    const equation7 = "- k \\cdot x = m \\cdot \\frac{d^2x}{dt^2}\n";
     katex.render(equation7, document.getElementById("equation7"));
 
     katex.render("L", document.getElementById("stretchedLength"));
