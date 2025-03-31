@@ -249,6 +249,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const equation11 = "\\sum F = \\newline k \\cdot (\\sqrt{\\Delta x^2 + \\left( z_{i - 1, j} - z_{i, j} \\right)^2}\n - L_0) \\cdot \\operatorname{sign} \\left( z_{i - 1, j} - z_{i, j} \\right) + \\newline k \\cdot (\\sqrt{\\Delta x^2 + \\left( z_{i + 1, j} - z_{i, j} \\right)^2}\n - L_0) \\cdot \\operatorname{sign} \\left( z_{i + 1, j} - z_{i, j} \\right) + \\newline k \\cdot (\\sqrt{\\Delta x^2 + \\left( z_{i, j - 1} - z_{i, j} \\right)^2}\n - L_0) \\cdot \\operatorname{sign} \\left( z_{i, j - 1} - z_{i, j} \\right) + \\newline k \\cdot (\\sqrt{\\Delta x^2 + \\left( z_{i, j + 1} - z_{i, j} \\right)^2}\n - L_0) \\cdot \\operatorname{sign} \\left( z_{i, j + 1} - z_{i, j} \\right) - \\newline K_f \\cdot \\frac{d z}{dt} = m \\cdot \\frac{d^2 z}{dt^2}\n";
     katex.render(equation11, document.getElementById("equation11"));
+
+    const equation12 = `\\begin{aligned}y_{n+1} &= y_n + \\frac{h}{6} \\left( k_1 + 2k_2 + 2k_3 + k_4 \\right) \\\\k_1 &= f(x_n, y_n) \\\\k_2 &= f\\left( x_n + \\frac{1}{2} h, y_n + \\frac{1}{2} h k_1 \\right) \\\\k_3 &= f\\left( x_n + \\frac{1}{2} h, y_n + \\frac{1}{2} h k_2 \\right) \\\\k_4 &= f\\left( x_n + h, y_n + h k_3 \\right)\\end{aligned}`;
+    katex.render(equation12, document.getElementById("equation12"));
   }
 
   runSimulation(

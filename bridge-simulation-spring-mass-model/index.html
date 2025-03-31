@@ -163,6 +163,13 @@
       <div id="equation11" style="text-align: center; line-height: 3;"></div>
       <br>
 
+      <p>We will use the <a class="link" href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">Runge-Kutta 4th order method</a> to solve this problem:</p>
+
+      <div id="equation12" style="text-align: center; line-height: 3;"></div>
+      <br>
+
+      <p><a class="link" href="https://www.geeksforgeeks.org/runge-kutta-4th-order-method-solve-differential-equation/">This article</a> also explains in detail the Runge-Kutta 4th order method.</p>
+
       <h2>How do we translate all of this into code?</h2>
 
       <p>We need to initialize a few matrices so we create a simple function to do it:</p>
@@ -180,8 +187,14 @@
       <p>We also need to debug the matrix (As we are currently doing):</p>
       <script src="https://gist.github.com/jpruiz114/00fb3a2e3c1d8a185fd84ed89191477a.js"></script>
 
+      <p>This is the main part of the challenge which involves coding the function:</p>
+      <script src="https://gist.github.com/jpruiz114/713e30ded9cd19a9d6c711317062427e.js"></script>
+
       <p>Later when we have the results of each iteration, we want to have the ability to render each isometric plate:</p>
       <script src="https://gist.github.com/jpruiz114/ff0cab77a1a798e2a9ced5d57d6e001d.js"></script>
+
+      <p>When you have the function, you call it, and using Runge-Kutta 4th order, we find the values we need:</p>
+      <script src="https://gist.github.com/jpruiz114/e124ec81f1b4e7ab713254f3bc8c5f53.js"></script>
 
       <p>Below you can see the simulation of the bridge running on an HTML canvas, rendered with an open source isometric engine (Hint: Open the browser's developer tools to see the matrices printed):</p>
 
