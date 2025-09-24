@@ -4,6 +4,8 @@ An interactive physics simulation built from scratch to demonstrate fundamental 
 
 **By Jean Paul Ruiz - March 3, 2025**
 
+**[View Live Project →](https://jeanpaulruizvallejo.com/physics-simulations/)**
+
 ## Purpose
 
 Why build your own simulations in the age of AI and advanced tools?
@@ -41,7 +43,7 @@ An interactive simulation that models a bridge as a series of interconnected pla
 - Boundary conditions ensure edge plates don't vibrate
 - Adjustable parameters: spring constant, damping, mass, gravity
 
-[**View Live Demo →**](bridge-simulation-spring-mass-model/)
+[**View Live Demo →**](https://jeanpaulruizvallejo.com/physics-simulations/bridge-simulation-spring-mass-model/)
 
 ## Technical Stack
 
@@ -127,9 +129,9 @@ y_{n+1} = y_n + (h/6)(k₁ + 2k₂ + 2k₃ + k₄)
 
 ### Hand-Worked Solutions
 The project includes hand-written mathematical derivations:
-- [Page 1](bridge-simulation-spring-mass-model/img/page-1.jpg) - Basic force analysis
-- [Page 2](bridge-simulation-spring-mass-model/img/page-2.jpg) - Equation development  
-- [Page 3](bridge-simulation-spring-mass-model/img/page-3.jpg) - Complete solution
+- [Page 1](https://jeanpaulruizvallejo.com/physics-simulations/bridge-simulation-spring-mass-model/img/page-1.jpg) - Basic force analysis
+- [Page 2](https://jeanpaulruizvallejo.com/physics-simulations/bridge-simulation-spring-mass-model/img/page-2.jpg) - Equation development  
+- [Page 3](https://jeanpaulruizvallejo.com/physics-simulations/bridge-simulation-spring-mass-model/img/page-3.jpg) - Complete solution
 
 ### Code Examples
 Embedded GitHub Gists demonstrate:
