@@ -144,15 +144,15 @@ Embedded GitHub Gists demonstrate:
 
 ```
 physics-simulations/
-├── index.html                    # Main landing page
+├── index.html                           # Main landing page
 ├── bridge-simulation-spring-mass-model/
-│   ├── index.html               # Bridge simulation page
-│   ├── js/app.js               # Main simulation logic
-│   ├── css/                    # Styling
-│   └── img/                    # Documentation images
-├── js/                         # Shared JavaScript
-├── css/                        # Global styles
-└── webpack.*.js               # Build configurations
+│   ├── index.html                       # Bridge simulation page
+│   ├── js/app.js                        # Main simulation logic
+│   ├── css/                             # Styling
+│   └── img/                             # Documentation images
+├── js/                                  # Shared JavaScript
+├── css/                                 # Global styles
+└── webpack.*.js                         # Build configurations
 ```
 
 ## Acknowledgments
