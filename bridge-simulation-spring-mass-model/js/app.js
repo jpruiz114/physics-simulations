@@ -3,15 +3,49 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("App initialized");
 
-  resizeCanvas();
+  // Wait for all external dependencies to load
+  waitForDependencies().then(() => {
+    initializeSimulation();
+  }).catch((error) => {
+    console.error("Failed to initialize simulation:", error);
+    // Retry after a short delay
+    setTimeout(() => {
+      initializeSimulation();
+    }, 1000);
+  });
+});
 
+function waitForDependencies() {
+  return new Promise((resolve, reject) => {
+    const checkDependencies = () => {
+      if (typeof Isomer !== 'undefined' && 
+          typeof katex !== 'undefined' && 
+          document.getElementById('art')) {
+        resolve();
+      } else {
+        setTimeout(checkDependencies, 100);
+      }
+    };
+    
+    // Timeout after 10 seconds
+    setTimeout(() => reject(new Error("Dependencies not loaded")), 10000);
+    checkDependencies();
+  });
+}
+
+function initializeSimulation() {
+  resizeCanvas();
+  
   // Update canvas size whenever the window is resized
   window.addEventListener('resize', resizeCanvas);
 
   function resizeCanvas() {
     const canvas = document.getElementById('art');
-    canvas.width = window.outerWidth;
-    canvas.height = window.outerHeight;
+    if (canvas) {
+      // Use inner dimensions and ensure reasonable size
+      canvas.width = Math.max(window.innerWidth * 0.9, 800);
+      canvas.height = Math.max(window.innerHeight * 0.6, 600);
+    }
   }
 
   function initializeMatrix(m, n) {
@@ -137,22 +171,37 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function drawPlates(m, n, matrix) {
-    let iso = new Isomer(document.getElementById("art"));
-    iso.canvas.clear();
-
-    let Point = Isomer.Point;
-    let Shape = Isomer.Shape;
-
-    let plateWidth = 1;
-    let plateHeight = 1;
-    let plateThickness = 0.2;
-
-    for (let i = m - 1; i >= 0; i--) {
-      for (let j = n - 1; j >= 0; j--) {
-        let x = i * (plateWidth);
-        let y = j * (plateHeight);
-        iso.add(Shape.Prism(Point(x, y, matrix[i][j]), plateWidth, plateHeight, plateThickness));
+    try {
+      const canvas = document.getElementById("art");
+      if (!canvas) {
+        console.error("Canvas element not found");
+        return;
       }
+
+      let iso = new Isomer(canvas);
+      if (!iso || !iso.canvas) {
+        console.error("Failed to initialize Isomer");
+        return;
+      }
+
+      iso.canvas.clear();
+
+      let Point = Isomer.Point;
+      let Shape = Isomer.Shape;
+
+      let plateWidth = 1;
+      let plateHeight = 1;
+      let plateThickness = 0.2;
+
+      for (let i = m - 1; i >= 0; i--) {
+        for (let j = n - 1; j >= 0; j--) {
+          let x = i * (plateWidth);
+          let y = j * (plateHeight);
+          iso.add(Shape.Prism(Point(x, y, matrix[i][j]), plateWidth, plateHeight, plateThickness));
+        }
+      }
+    } catch (error) {
+      console.error("Error drawing plates:", error);
     }
   }
 
@@ -254,6 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
     katex.render(equation12, document.getElementById("equation12"));
   }
 
+  // Start simulation only after all dependencies are loaded
   runSimulation(
     f,
     0,
@@ -265,4 +315,4 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   renderEquations();
-});
+}
